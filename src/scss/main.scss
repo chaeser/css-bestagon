@@ -10,10 +10,18 @@ $height-to-width-ratio: 0.8660254;
 .bestagon-columns,
 .bestagon-columns-odd {
   --bestagon-size-a: calc(var(--bestagon-size) * #{$height-to-width-ratio});
-  --bestagon-offset: calc(
-    (var(--bestagon-size-a) / 2) + (var(--bestagon-gap) / 2)
-  );
+  --bestagon-offset: calc((var(--bestagon-size-a) / 2) + (var(--bestagon-gap) / 2));
   --bestagon-shift: calc(var(--bestagon-size) / -4);
+
+  .bestagon-row,
+  .bestagon-column {
+    .bestagon-cell {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 
 .bestagon-rows,
@@ -22,22 +30,23 @@ $height-to-width-ratio: 0.8660254;
   flex-direction: column;
   gap: var(--bestagon-gap);
 
-  & > .bestagon-row {
+  .bestagon-row {
     display: flex;
     flex-direction: row;
     gap: var(--bestagon-gap);
 
-    & > .bestagon-cell,
-    & > .bestagon-space {
+    .bestagon-cell,
+    .bestagon-space {
+      flex-shrink: 0;
       width: var(--bestagon-size-a);
       height: var(--bestagon-size);
     }
 
-    & > .bestagon-cell {
+    .bestagon-cell {
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     }
 
-    & > .bestagon-space {
+    .bestagon-space {
       visibility: hidden;
     }
 
@@ -53,22 +62,23 @@ $height-to-width-ratio: 0.8660254;
   flex-direction: row;
   gap: var(--bestagon-gap);
 
-  & > .bestagon-column {
+  .bestagon-column {
     display: flex;
     flex-direction: column;
     gap: var(--bestagon-gap);
 
-    & > .bestagon-cell,
-    & > .bestagon-space {
+    .bestagon-cell,
+    .bestagon-space {
+      flex-shrink: 0;
       width: var(--bestagon-size);
       height: var(--bestagon-size-a);
     }
 
-    & > .bestagon-cell {
+    .bestagon-cell {
       clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     }
 
-    & > .bestagon-space {
+    .bestagon-space {
       visibility: hidden;
     }
 
@@ -78,15 +88,12 @@ $height-to-width-ratio: 0.8660254;
   }
 }
 
-.bestagon-rows > .bestagon-row:nth-child(even) {
+.bestagon-rows .bestagon-row:nth-child(even),
+.bestagon-rows-odd .bestagon-row:nth-child(odd) {
   margin-left: var(--bestagon-offset);
 }
-.bestagon-rows-odd > .bestagon-row:nth-child(odd) {
-  margin-left: var(--bestagon-offset);
-}
-.bestagon-columns > .bestagon-column:nth-child(even) {
-  margin-top: var(--bestagon-offset);
-}
-.bestagon-columns-odd > .bestagon-column:nth-child(odd) {
+
+.bestagon-columns .bestagon-column:nth-child(even),
+.bestagon-columns-odd .bestagon-column:nth-child(odd) {
   margin-top: var(--bestagon-offset);
 }

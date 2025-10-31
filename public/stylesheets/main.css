@@ -8,10 +8,21 @@
 .bestagon-columns,
 .bestagon-columns-odd {
   --bestagon-size-a: calc(var(--bestagon-size) * 0.8660254);
-  --bestagon-offset: calc(
-    (var(--bestagon-size-a) / 2) + (var(--bestagon-gap) / 2)
-  );
+  --bestagon-offset: calc((var(--bestagon-size-a) / 2) + (var(--bestagon-gap) / 2));
   --bestagon-shift: calc(var(--bestagon-size) / -4);
+}
+.bestagon-rows .bestagon-row .bestagon-cell,
+.bestagon-rows .bestagon-column .bestagon-cell,
+.bestagon-rows-odd .bestagon-row .bestagon-cell,
+.bestagon-rows-odd .bestagon-column .bestagon-cell,
+.bestagon-columns .bestagon-row .bestagon-cell,
+.bestagon-columns .bestagon-column .bestagon-cell,
+.bestagon-columns-odd .bestagon-row .bestagon-cell,
+.bestagon-columns-odd .bestagon-column .bestagon-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .bestagon-rows,
@@ -20,28 +31,30 @@
   flex-direction: column;
   gap: var(--bestagon-gap);
 }
-.bestagon-rows > .bestagon-row,
-.bestagon-rows-odd > .bestagon-row {
+.bestagon-rows .bestagon-row,
+.bestagon-rows-odd .bestagon-row {
   display: flex;
   flex-direction: row;
   gap: var(--bestagon-gap);
 }
-.bestagon-rows > .bestagon-row > .bestagon-cell, .bestagon-rows > .bestagon-row > .bestagon-space,
-.bestagon-rows-odd > .bestagon-row > .bestagon-cell,
-.bestagon-rows-odd > .bestagon-row > .bestagon-space {
+.bestagon-rows .bestagon-row .bestagon-cell,
+.bestagon-rows .bestagon-row .bestagon-space,
+.bestagon-rows-odd .bestagon-row .bestagon-cell,
+.bestagon-rows-odd .bestagon-row .bestagon-space {
+  flex-shrink: 0;
   width: var(--bestagon-size-a);
   height: var(--bestagon-size);
 }
-.bestagon-rows > .bestagon-row > .bestagon-cell,
-.bestagon-rows-odd > .bestagon-row > .bestagon-cell {
+.bestagon-rows .bestagon-row .bestagon-cell,
+.bestagon-rows-odd .bestagon-row .bestagon-cell {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
-.bestagon-rows > .bestagon-row > .bestagon-space,
-.bestagon-rows-odd > .bestagon-row > .bestagon-space {
+.bestagon-rows .bestagon-row .bestagon-space,
+.bestagon-rows-odd .bestagon-row .bestagon-space {
   visibility: hidden;
 }
-.bestagon-rows > .bestagon-row:not(:first-child),
-.bestagon-rows-odd > .bestagon-row:not(:first-child) {
+.bestagon-rows .bestagon-row:not(:first-child),
+.bestagon-rows-odd .bestagon-row:not(:first-child) {
   margin-top: var(--bestagon-shift);
 }
 
@@ -51,44 +64,40 @@
   flex-direction: row;
   gap: var(--bestagon-gap);
 }
-.bestagon-columns > .bestagon-column,
-.bestagon-columns-odd > .bestagon-column {
+.bestagon-columns .bestagon-column,
+.bestagon-columns-odd .bestagon-column {
   display: flex;
   flex-direction: column;
   gap: var(--bestagon-gap);
 }
-.bestagon-columns > .bestagon-column > .bestagon-cell, .bestagon-columns > .bestagon-column > .bestagon-space,
-.bestagon-columns-odd > .bestagon-column > .bestagon-cell,
-.bestagon-columns-odd > .bestagon-column > .bestagon-space {
+.bestagon-columns .bestagon-column .bestagon-cell,
+.bestagon-columns .bestagon-column .bestagon-space,
+.bestagon-columns-odd .bestagon-column .bestagon-cell,
+.bestagon-columns-odd .bestagon-column .bestagon-space {
+  flex-shrink: 0;
   width: var(--bestagon-size);
   height: var(--bestagon-size-a);
 }
-.bestagon-columns > .bestagon-column > .bestagon-cell,
-.bestagon-columns-odd > .bestagon-column > .bestagon-cell {
+.bestagon-columns .bestagon-column .bestagon-cell,
+.bestagon-columns-odd .bestagon-column .bestagon-cell {
   clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
-.bestagon-columns > .bestagon-column > .bestagon-space,
-.bestagon-columns-odd > .bestagon-column > .bestagon-space {
+.bestagon-columns .bestagon-column .bestagon-space,
+.bestagon-columns-odd .bestagon-column .bestagon-space {
   visibility: hidden;
 }
-.bestagon-columns > .bestagon-column:not(:first-child),
-.bestagon-columns-odd > .bestagon-column:not(:first-child) {
+.bestagon-columns .bestagon-column:not(:first-child),
+.bestagon-columns-odd .bestagon-column:not(:first-child) {
   margin-left: var(--bestagon-shift);
 }
 
-.bestagon-rows > .bestagon-row:nth-child(even) {
+.bestagon-rows .bestagon-row:nth-child(even),
+.bestagon-rows-odd .bestagon-row:nth-child(odd) {
   margin-left: var(--bestagon-offset);
 }
 
-.bestagon-rows-odd > .bestagon-row:nth-child(odd) {
-  margin-left: var(--bestagon-offset);
-}
-
-.bestagon-columns > .bestagon-column:nth-child(even) {
-  margin-top: var(--bestagon-offset);
-}
-
-.bestagon-columns-odd > .bestagon-column:nth-child(odd) {
+.bestagon-columns .bestagon-column:nth-child(even),
+.bestagon-columns-odd .bestagon-column:nth-child(odd) {
   margin-top: var(--bestagon-offset);
 }
 

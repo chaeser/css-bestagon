@@ -2,22 +2,22 @@
   --bestagon-gap: 0.5rem;
   --bestagon-size: 10rem;
 }
+
 .bestagon-cell {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: #ff5100;
 }
+
 .bestagon-cell.cat {
   background-image: url("cat.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .bestagon-cell.green {
   background-color: rgb(82, 196, 82);
 }
+
 .bestagon-cell.blue {
   background-color: rgb(104, 104, 250);
 }

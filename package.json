@@ -6,7 +6,7 @@
   "author": "Daniel Käser (https://github.com/chaeser)",
   "license": "MIT",
   "scripts": {
-    "sass": "sass --watch src/scss:public/stylesheets"
+    "build": "node build.js"
   },
   "dependencies": {
     "sass": "^1.93.2"

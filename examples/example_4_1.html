@@ -5,15 +5,35 @@
   <title>CSS-Bestagon: Example 4.1</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="./resources/bestagon.css" />
-  <link rel="stylesheet" href="./resources/example-styles.css" />
+  <style>
+    .example {
+      --bestagon-gap: 0rem;
+      --bestagon-size: 10rem;
+    }
+
+    .bestagon-cell.cat {
+      background-image: url("./resources/cat.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .bestagon-cell {
+      background-color: rgb(82, 196, 82);
+    }
+
+    .bestagon-cell.blue {
+      background-color: rgb(104, 104, 250);
+    }
+  </style>
 </head>
 
 <body>
   <h1>Example 4.1</h1>
-  <div class="bestagon-rows example">
+  <div class="bestagon-rows-odd example">
 
     <div class="bestagon-row">
-      <div class="bestagon-cell green">
+      <div class="bestagon-cell">
         <h2>meow!</h2>
         <p>1</p>
       </div>
@@ -21,38 +41,29 @@
         <h2>meow!</h2>
         <p>2</p>
       </div>
-      <div class="bestagon-cell green">
+    </div>
+
+    <div class="bestagon-row">
+      <div class="bestagon-cell blue">
         <h2>meow!</h2>
         <p>3</p>
       </div>
-      <div class="bestagon-cell blue">
+      <div class="bestagon-cell cat"></div>
+
+      <div class="bestagon-cell">
         <h2>meow!</h2>
         <p>4</p>
       </div>
     </div>
 
     <div class="bestagon-row">
-      <div class="bestagon-cell cat"></div>
-      <div class="bestagon-space"></div>
-      <div class="bestagon-cell cat"></div>
-    </div>
-
-    <div class="bestagon-row">
-      <div class="bestagon-cell blue">
+      <div class="bestagon-cell">
         <h2>meow!</h2>
         <p>5</p>
       </div>
-      <div class="bestagon-cell green">
-        <h2>meow!</h2>
-        <p>6</p>
-      </div>
       <div class="bestagon-cell blue">
         <h2>meow!</h2>
-        <p>7</p>
-      </div>
-      <div class="bestagon-cell green">
-        <h2>meow!</h2>
-        <p>8</p>
+        <p>6</p>
       </div>
     </div>
 

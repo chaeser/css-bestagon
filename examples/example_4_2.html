@@ -7,64 +7,78 @@
   <link rel="stylesheet" href="./resources/bestagon.css" />
   <style>
     .example {
-      --bestagon-gap: 0rem;
-      --bestagon-size: 10rem;
-    }
-
-    .bestagon-cell.cat {
-      background-image: url("./resources/cat.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      --bestagon-gap: 0.5rem;
+      --bestagon-size: 14rem;
+      --bestagon-border-size: 2px;
+      --bestagon-border-color: gray;
     }
 
     .bestagon-cell {
-      background-color: rgb(82, 196, 82);
+      background-color: white;
     }
 
-    .bestagon-cell.blue {
-      background-color: rgb(104, 104, 250);
+    .bestagon-cell.black {
+      color: white;
+      background-color: black;
+    }
+
+    .thick {
+      --bestagon-border-size: 8px;
+    }
+
+    .lightgray {
+      --bestagon-border-color: lightgray;
+    }
+
+    .darkgray {
+      --bestagon-border-color: darkgray;
+    }
+
+    .gray {
+      --bestagon-border-color: gray;
     }
   </style>
 </head>
 
 <body>
   <h1>Example 4.2</h1>
-  <div class="bestagon-columns-odd example">
+  <div class="bestagon-columns example">
 
-   
     <div class="bestagon-column">
-      <div class="bestagon-cell">
-        <h2>meow!</h2>
-        <p>1</p>
+      <div class="bestagon-border">
+        <div class="bestagon-cell">
+          single thin border<br />1
+        </div>
       </div>
-      <div class="bestagon-cell blue">
-        <h2>meow!</h2>
-        <p>2</p>
+      <div class="bestagon-border thick">
+        <div class="bestagon-cell">
+          single thick border<br />2
+        </div>
+      </div>
+    </div>
+
+    <div class="bestagon-column thick">
+      <div class="bestagon-border lightgray">
+        <div class="bestagon-border darkgray">
+          <div class="bestagon-border gray">
+            <div class="bestagon-cell black">
+              multiple thick borders<br />3
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="bestagon-column">
-      <div class="bestagon-cell blue">
-        <h2>meow!</h2>
-        <p>3</p>
+      <div class="bestagon-border thick">
+        <div class="bestagon-cell">
+          single thick border<br />4
+        </div>
       </div>
-      <div class="bestagon-cell cat"></div>
-
-      <div class="bestagon-cell">
-        <h2>meow!</h2>
-        <p>4</p>
-      </div>
-    </div>
-
-    <div class="bestagon-column">
-      <div class="bestagon-cell">
-        <h2>meow!</h2>
-        <p>5</p>
-      </div>
-      <div class="bestagon-cell blue">
-        <h2>meow!</h2>
-        <p>6</p>
+      <div class="bestagon-border">
+        <div class="bestagon-cell">
+          single thin border<br />5
+        </div>
       </div>
     </div>
 

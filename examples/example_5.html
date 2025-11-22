@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS-Bestagon: Example 1.2</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./resources/bestagon.css" />
+    <style>
+        .example {
+            --bestagon-gap: 0.5rem;
+            --bestagon-size: 14rem;
+        }
+
+        .bestagon-cell {
+            background-color: gray;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .bestagon-cell.red {
+            background-color: rgb(255, 126, 126);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Example 1.2</h1>
+    <div class="bestagon-columns example">
+
+        <div class="bestagon-column">
+            <div class="bestagon-cell red">Empathize</div>
+        </div>
+
+        <div class="bestagon-column">
+            <div class="bestagon-cell">Define</div>
+        </div>
+
+        <div class="bestagon-column">
+            <div class="bestagon-cell">Ideate</div>
+        </div>
+
+        <div class="bestagon-column">
+            <div class="bestagon-cell">Prototype</div>
+        </div>
+
+        <div class="bestagon-column">
+            <div class="bestagon-space"></div>
+            <div class="bestagon-cell">Test</div>
+        </div>
+
+    </div>
+</body>
+
+</html>
